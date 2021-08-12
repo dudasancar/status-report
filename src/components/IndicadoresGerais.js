@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Divider, List, Typography } from 'antd';
+import { Badge, Divider } from 'antd';
 
 const IndicadoresGerais = () => {
 
@@ -20,7 +20,7 @@ const IndicadoresGerais = () => {
         border: 2px solid #EFF2F0;
         border-radius: 1.5rem;
         width: 65rem;
-        height: 8rem;
+        height: 12rem;
         display: flex;
         justify-content: space-around;
     `;
@@ -30,7 +30,7 @@ const IndicadoresGerais = () => {
         font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
-        padding-top: 0.75rem;
+        padding-top: 3rem;
     `;
 
     const Previsto = styled.p`
@@ -47,7 +47,7 @@ const IndicadoresGerais = () => {
         font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
-        padding-top: 0.75rem;
+        padding-top: 3rem;
     `;
 
     const Realizado = styled.p`
@@ -64,7 +64,7 @@ const IndicadoresGerais = () => {
         font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
-        padding-top: 0.75rem;
+        padding-top: 3rem;
     `;
 
     const Performance = styled.p`
@@ -82,18 +82,13 @@ const IndicadoresGerais = () => {
         margin-top: 1.5rem;
     `;
 
-    const ListStyle = styled(List)`
-        position: initial;
+    const BadgeStyle = styled.div`
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-top: 3rem;
+        text-align: start;
     `;
 
-
-
-
-    const data = [
-        '>= 0.95',
-        '>= 0.85',
-        '< 0.85',
-    ];
     
     return (
         <div>
@@ -114,17 +109,12 @@ const IndicadoresGerais = () => {
                         <Performanceh2>0,90</Performanceh2>
                         <Performance>Performance</Performance>
                     </div>
-                    
-                    <ListStyle
-                        size="small"
-                        dataSource={data}
-                        renderItem={item => (
-                            <List.Item>
-                              <Typography.Text type="success">•</Typography.Text> {item}
-                            </List.Item>
-                        )}
-                    />
-                
+                <BadgeStyle>
+                    <Badge status="success" text=">= 0.95" />
+                    <Badge status="warning" text=">= 0.85" />
+                    <Badge status="error" text="< 0.85" />
+                </BadgeStyle>  
+
                 </Card>
             </Div>
         </div>
