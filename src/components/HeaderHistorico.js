@@ -6,6 +6,8 @@ import { Link, BrowserRouter } from 'react-router-dom';
 
 const { TextArea } = Input;
 
+
+
 const Div = styled.div`
     background: black;
     height: 50px;
@@ -13,16 +15,15 @@ const Div = styled.div`
     justify-content: space-around;
 `;
 
-const HistoricoButton = styled(Button)`
-    color: #00FFA5;
+const VoltarButton = styled(Button)`
+    color: black;
     border: 2px solid #00FFA5;
     border-radius: 3rem;
-    background: black 0% 0% no-repeat padding-box;
+    background: #00FFA5 0% 0% no-repeat padding-box;
     width: 8rem;
     height: 2rem;
     margin-top: 0.65rem;
 `;
-
 const NovoButton = styled(Button)`
     color: white;
     background: #0064FA;
@@ -42,8 +43,7 @@ const Linha2 = styled.div`
     display: flex;
 `;
 
-
-const Header = () => {
+const HeaderHistorico = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
 
     const showModal = () => {
@@ -57,15 +57,18 @@ const Header = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+
     return (
         <Div>
-            <HistoricoButton>
+            <VoltarButton>
+                <Image src="../assets/voltar.svg" />
                 <BrowserRouter>
-                    <Link to="/historico" >
-                        Histórico
+                    <Link to ="/">
+                         Voltar
                     </Link>
                 </BrowserRouter>
-            </HistoricoButton>
+            </VoltarButton>
             <Image src="../assets/status.report.svg" />
             <NovoButton type="primary" onClick={showModal}>Novo Status Report<Image src="../assets/novo.svg" /></NovoButton>
             <Modal width="50rem" title="Novo status report" visible={isModalVisible} okText="Salvar" onOk={handleOk} cancelText="Cancelar" onCancel={handleCancel}>
@@ -86,4 +89,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default HeaderHistorico;

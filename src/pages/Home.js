@@ -7,6 +7,7 @@ import PercentualEntrega from '../components/PercentualEntrega';
 import Impeditivos from '../components/Impeditivos';
 import { Typography } from 'antd';
 import { Footer } from 'antd/lib/layout/layout';
+import Header from '../components/Header';
 
 const { Title } = Typography;
 
@@ -41,19 +42,22 @@ const Semana = styled(Title)`
 
 const Home = () => {
     return (
-        <DivHome>
-            <Titulo>
-                <Nefrostar level={2}>Nefrostar</Nefrostar>
-                <Separador level={2}>/</Separador>
-                <Semana level={2}>2º Semana</Semana>
-            </Titulo>
-            <Datas />
-            <IndicadoresGerais />
-            <IndicadoresPerformance />
-            <PercentualEntrega />
-            <Impeditivos />
-            <Footer />
-        </DivHome>
+        <>
+            <Header />
+            <DivHome>
+                <Titulo>
+                    <Nefrostar level={2}>Nefrostar</Nefrostar>
+                    <Separador level={2}>/</Separador>
+                    <Semana level={2}>2º Semana</Semana>
+                </Titulo>
+                <Datas />
+                <IndicadoresGerais />
+                <IndicadoresPerformance />
+                <PercentualEntrega />
+                <Impeditivos />
+                <Footer />
+            </DivHome>
+        </>
     )
 }
 

@@ -5,8 +5,7 @@ import { Divider, List, Typography } from 'antd';
 const IndicadoresGerais = () => {
 
     const Titulo = styled.h3`
-        display: flex;
-        justify-content: initial;
+        text-align: justify;
         font-weight: bold;
         font-family: 'Poppins';
     `;
