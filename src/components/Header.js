@@ -2,7 +2,9 @@ import React from 'react';
 import { Button, Image } from 'antd';
 import styled from 'styled-components';
 
-const Div = styled.header`
+
+
+const Div = styled.div`
     background: black;
     height: 50px;
     display: flex;
@@ -34,8 +36,8 @@ const Header = () => {
     return (
         <Div>
             <HistoricoButton>Histórico</HistoricoButton>
-            <Image src="../assets/status-report.svg" />
-            <NovoButton type="primary">Novo Status Report</NovoButton>
+            <Image src="../assets/status.report.svg" />
+            <NovoButton type="primary">Novo Status Report<Image src="../assets/novo.svg" /></NovoButton>
         </Div>
     )
 }

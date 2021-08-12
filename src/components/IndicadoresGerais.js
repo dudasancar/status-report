@@ -4,11 +4,11 @@ import { Divider, List, Typography } from 'antd';
 
 const IndicadoresGerais = () => {
 
-    const Title = styled.h3`
+    const Titulo = styled.h3`
         display: flex;
         justify-content: initial;
-        margin-left: 10.5rem;
         font-weight: bold;
+        font-family: 'Poppins';
     `;
 
     const Div = styled.div`
@@ -28,7 +28,7 @@ const IndicadoresGerais = () => {
 
     const Previstoh2 = styled.h2`
         color: #005F9C;
-        font-weight: bold;
+        font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
         padding-top: 0.75rem;
@@ -39,12 +39,13 @@ const IndicadoresGerais = () => {
         flex-wrap: nowrap;
         justify-content: center;
         color: #005F9C;
-        font-weight: bold;
+        font: medium Poppins;
+        font-size: 0.8rem;
     `;
 
     const Realizadoh2 = styled.h2`
         color: #03714A;
-        font-weight: bold;
+        font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
         padding-top: 0.75rem;
@@ -55,12 +56,13 @@ const IndicadoresGerais = () => {
         flex-wrap: nowrap;
         justify-content: center;
         color: #03714A;
-        font-weight: bold;
+        font-family: 'Poppins';
+        font-size: 0.8rem;
     `;
 
     const Performanceh2 = styled.h2`
         color: #F1A800;
-        font-weight: bold;
+        font-family: 'Poppins';
         font-size: 3rem;
         margin-bottom: 0;
         padding-top: 0.75rem;
@@ -71,7 +73,8 @@ const IndicadoresGerais = () => {
         flex-wrap: nowrap;
         justify-content: center;
         color: #F1A800;
-        font-weight: bold;
+        font-family: 'Poppins';
+        font-size: 0.8rem;
     `;
 
     const Separador = styled(Divider)`
@@ -80,9 +83,8 @@ const IndicadoresGerais = () => {
         margin-top: 1.5rem;
     `;
 
-    const ListStyle = styled.div`
-        display: flex;
-        flex-wrap: wrap;
+    const ListStyle = styled(List)`
+        position: initial;
     `;
 
 
@@ -90,16 +92,13 @@ const IndicadoresGerais = () => {
 
     const data = [
         '>= 0.95',
-    ];
-    const data1 = [
         '>= 0.85',
-    ];
-    const data2 = [
         '< 0.85',
     ];
+    
     return (
         <div>
-            <Title>Indicadores gerais do projeto</Title>
+            <Titulo>Indicadores gerais do projeto</Titulo>
             <Div>
                 <Card>
                     <div>
@@ -116,8 +115,8 @@ const IndicadoresGerais = () => {
                         <Performanceh2>0,90</Performanceh2>
                         <Performance>Performance</Performance>
                     </div>
-                    <ListStyle>
-                    <List
+                    
+                    <ListStyle
                         size="small"
                         dataSource={data}
                         renderItem={item => (
@@ -126,25 +125,7 @@ const IndicadoresGerais = () => {
                             </List.Item>
                         )}
                     />
-                    <List
-                        size="small"
-                        dataSource={data1}
-                        renderItem={item => (
-                            <List.Item>
-                              <Typography.Text type="warning">•</Typography.Text> {item}
-                            </List.Item>
-                        )}
-                    />
-                    <List
-                        size="small"
-                        dataSource={data2}
-                        renderItem={item => (
-                            <List.Item>
-                              <Typography.Text type="danger">•</Typography.Text> {item}
-                            </List.Item>
-                        )}
-                    />
-                </ListStyle>
+                
                 </Card>
             </Div>
         </div>

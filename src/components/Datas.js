@@ -22,10 +22,12 @@ const Prazo = styled.p`
     color: #0098FA;
     margin-right: 0.25rem;
     padding-top: 0.65rem;
+    font-family: 'Poppins';
     font-weight: bold;
 `;
 
 const Data = styled.p`
+    font-family: 'Poppins';
     padding-top: 0.65rem;
 `;
 
@@ -38,13 +40,14 @@ const Card2 = styled.div`
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 0.25rem;
+    margin: 0.5rem;
 `;
 
 const Sprint2 = styled.p`
     color: #00BE7B;
     margin-right: 0.25rem;
     padding-top: 0.65rem;
+    font-family: 'Poppins';
     font-weight: bold;
 `;
 
@@ -52,6 +55,7 @@ const DiasRestantes = styled.p`
     color: #EE8020;
     margin-right: 0.25rem;
     padding-top: 0.65rem;
+    font-family: 'Poppins';
     font-weight: bold;
 `;
 
