@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Image, Modal, InputNumber, DatePicker, Input } from 'antd';
+import { Button, Modal, InputNumber, DatePicker, Input } from 'antd';
 import styled from 'styled-components';
 import { Link, BrowserRouter } from 'react-router-dom';
+import logo from '../assets/logo.svg';
+import novo from '../assets/novo.svg';
 
 
 const { TextArea } = Input;
@@ -23,6 +25,10 @@ const HistoricoButton = styled(Button)`
     margin-top: 0.65rem;
 `;
 
+const ImgLogo = styled.img`
+    width: 8rem;
+`;
+
 const NovoButton = styled(Button)`
     color: white;
     background: #0064FA;
@@ -31,6 +37,11 @@ const NovoButton = styled(Button)`
     width: 12rem;
     height: 2rem;
     margin-top: 0.65rem;
+`;
+
+const ImgNovo = styled.img`
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
 `;
 
 const Linha1 = styled.div`
@@ -66,8 +77,8 @@ const Header = () => {
                     </Link>
                 </BrowserRouter>
             </HistoricoButton>
-            <Image src="../assets/status.report.svg" />
-            <NovoButton type="primary" onClick={showModal}>Novo Status Report<Image src="../assets/novo.svg" /></NovoButton>
+            <ImgLogo src={logo} />
+            <NovoButton type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></NovoButton>
             <Modal width="50rem" title="Novo status report" visible={isModalVisible} okText="Salvar" onOk={handleOk} cancelText="Cancelar" onCancel={handleCancel}>
                 <Linha1>
                     <p>Número da semana</p> 

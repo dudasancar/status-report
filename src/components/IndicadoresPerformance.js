@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import ajuda from '../assets/ajuda.svg';
 
 const Titulo = styled.h3`
     display: flex;
@@ -19,7 +20,7 @@ const Cards = styled.div`
 const Card1 = styled.div`
     background: white;
     border: 2px solid #00BE7B;
-    border-radius: 2rem;
+    border-radius: 1rem;
     width: 21rem;
     height: 12rem;
     margin-right: 1rem;
@@ -41,14 +42,20 @@ const Estimativa = styled.p`
 const Card2 = styled.div`
     background: white;
     border: 2px solid #F1A800;
-    border-radius: 2rem;
+    border-radius: 1rem;
     width: 21rem;
     height: 12rem;
     margin-right: 1rem;
 `;
 
+const ImgAjuda = styled.img`
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+`;
+
 const EstimativasPendentesh2 = styled.h2`
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
     color: #F1A800;
     font-family: 'Poppins';
     font-size: 2.8rem;
@@ -63,7 +70,7 @@ const EstimativasPendentes = styled.p`
 const Card3 = styled.div`
     background: white;
     border: 2px solid #F63030;
-    border-radius: 2rem;
+    border-radius: 1rem;
     width: 21rem;
     height: 12rem;
 `;
@@ -92,6 +99,7 @@ const IndicadoresPerformance = () => {
                     <Estimativa>Estimativa da sprint</Estimativa>
                 </Card1>
                 <Card2>
+                    <ImgAjuda src={ajuda} />
                     <EstimativasPendentesh2>33hr</EstimativasPendentesh2>
                     <EstimativasPendentes>Total de estimativas pendentes</EstimativasPendentes>
                 </Card2>

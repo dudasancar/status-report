@@ -5,9 +5,11 @@ import { Badge, Divider } from 'antd';
 const IndicadoresGerais = () => {
 
     const Titulo = styled.h3`
-        text-align: justify;
         font-weight: bold;
         font-family: 'Poppins';
+        display: flex;
+        flex: 1;
+        align-self: baseline;
     `;
 
     const Div = styled.div`

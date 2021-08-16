@@ -21,6 +21,8 @@ const CardMaior = styled.div`
 
 const Texto = styled.div`
     display: flex;
+    flex: 1;
+    justify-content: space-between;
     font-family: 'Poppins';
 `;
 

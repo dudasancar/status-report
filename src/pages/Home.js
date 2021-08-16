@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import Datas from '../components/Datas';
+import Datas from '../components/Datas/Datas';
 import IndicadoresGerais from '../components/IndicadoresGerais';
 import IndicadoresPerformance from '../components/IndicadoresPerformance';
 import PercentualEntrega from '../components/PercentualEntrega';
