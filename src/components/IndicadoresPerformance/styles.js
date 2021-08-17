@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 
+export const DivTitulo = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+`;
+
+export const DivTitulo2 = styled.div`
+    width: 65rem;
+    height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
 export const Titulo = styled.h3`
     display: flex;
-    justify-content: initial;
-    padding-top: 2rem;
+    flex: 1;
     font-weight: bold;
     font-family: 'Poppins';
 `;
@@ -46,13 +60,12 @@ export const Card2 = styled.div`
 `;
 
 export const ImgAjuda = styled.img`
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
+    float: right;
+    padding: 0.5rem;
 `;
 
 export const EstimativasPendentesh2 = styled.h2`
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
     color: #F1A800;
     font-family: 'Poppins';
     font-size: 2.8rem;

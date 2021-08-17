@@ -1,12 +1,16 @@
 import React from 'react';
 import ajuda from '../../assets/ajuda.svg';
-import { Titulo, Cards, Card1, Estimativah2, Estimativa, Card2, ImgAjuda, EstimativasPendentesh2, EstimativasPendentes, Card3, HorasConsumidash2, HorasConsumidas } from './styles';
+import { Titulo, Cards, Card1, Estimativah2, Estimativa, Card2, ImgAjuda, EstimativasPendentesh2, EstimativasPendentes, Card3, HorasConsumidash2, HorasConsumidas, DivTitulo, DivTitulo2 } from './styles';
 
 
 const IndicadoresPerformance = () => {
     return (
         <>
-        <Titulo>Indicadores de performance da sprint</Titulo>
+        <DivTitulo>
+            <DivTitulo2>
+                <Titulo>Indicadores de performance da sprint</Titulo>
+            </DivTitulo2>
+        </DivTitulo>
         <Cards>
                 <Card1>
                     <Estimativah2>65hr</Estimativah2>

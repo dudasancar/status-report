@@ -1,17 +1,31 @@
 import styled from 'styled-components';
 import { Divider } from 'antd';
 
-export const Titulo = styled.h3`
-font-weight: bold;
-font-family: 'Poppins';
-display: flex;
-flex: 1;
-align-self: baseline;
+export const DivTitulo = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 `;
 
-export const Div = styled.div`
-display: flex;
-justify-content: center;
+export const DivTitulo2 = styled.div`
+    width: 65rem;
+    height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
+export const Titulo = styled.h3`
+    font-weight: bold;
+    font-family: 'Poppins';
+    display: flex;
+    flex: 1;
+`;
+
+export const DivCard = styled.div`
+    display: flex;
+    justify-content: center;
 `;
 
 export const Card = styled.div`

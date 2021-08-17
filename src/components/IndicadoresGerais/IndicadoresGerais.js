@@ -1,12 +1,16 @@
 import React from 'react';
 import { Badge } from 'antd';
-import { Titulo, Div, Card, Previstoh2, Previsto, Separador, Realizadoh2, Realizado, Performanceh2, Performance, BadgeStyle } from './styles';
+import { Titulo, DivCard, Card, Previstoh2, Previsto, Separador, Realizadoh2, Realizado, Performanceh2, Performance, BadgeStyle, DivTitulo, DivTitulo2 } from './styles';
 
 const IndicadoresGerais = () => {   
     return (
-        <div>
-            <Titulo>Indicadores gerais do projeto</Titulo>
-            <Div>
+        <>
+            <DivTitulo>
+                <DivTitulo2>
+                    <Titulo>Indicadores gerais do projeto</Titulo>
+                </DivTitulo2>
+            </DivTitulo>
+            <DivCard>
                 <Card>
                     <div>
                         <Previstoh2>40%</Previstoh2>
@@ -29,8 +33,8 @@ const IndicadoresGerais = () => {
                 </BadgeStyle>  
 
                 </Card>
-            </Div>
-        </div>
+            </DivCard>
+        </>
     )
 }
 
