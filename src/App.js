@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import Header from './components/Header';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import { Footer } from 'antd/lib/layout/layout';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Historico from './pages/Historico';
+import Historico from './pages/Historico/Historico';
 
 function App() {
   return (

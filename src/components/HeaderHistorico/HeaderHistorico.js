@@ -1,66 +1,14 @@
 import React from 'react';
-import { Button, Image, Modal, InputNumber, DatePicker, Input } from 'antd';
-import styled from 'styled-components';
+import { Modal, InputNumber, DatePicker, Input } from 'antd';
 import { Link, BrowserRouter } from 'react-router-dom';
-import voltar from '../assets/voltar.svg';
-import logo from '../assets/logo.svg';
-import novo from '../assets/novo.svg';
+import voltar from '../../assets/voltar.svg';
+import logo from '../../assets/logo.svg';
+import novo from '../../assets/novo.svg';
+import {Div, VoltarButton, ImgVoltar, ImgLogo, NovoButton, ImgNovo, Linha1, Linha2} from './styles';
 
 
 const { TextArea } = Input;
 
-
-
-const Div = styled.div`
-    background: black;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-`;
-
-const VoltarButton = styled(Button)`
-    color: black;
-    border: 2px solid #00FFA5;
-    border-radius: 3rem;
-    background: #00FFA5 0% 0% no-repeat padding-box;
-    width: 8rem;
-    height: 2rem;
-    margin-top: 0.65rem;
-`;
-
-const ImgVoltar = styled.img`
-    margin-right: 0.5rem;
-    margin-bottom: 0.2rem;
-`;
-
-const ImgLogo = styled.img`
-    width: 8rem;
-`;
-
-const NovoButton = styled(Button)`
-    color: white;
-    background: #0064FA;
-    border-radius: 3rem;
-    border: 2px solid #0064FA;
-    width: 12rem;
-    height: 2rem;
-    margin-top: 0.65rem;
-`;
-
-const ImgNovo = styled.img`
-    margin-left: 0.5rem;
-    margin-bottom: 0.2rem;
-`;
-
-const Linha1 = styled.div`
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-`;
-
-const Linha2 = styled.div`
-    display: flex;
-`;
 
 const HeaderHistorico = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
