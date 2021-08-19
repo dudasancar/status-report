@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from 'antd';
+import { Progress, Checkbox } from 'antd';
 import { Total, CardMaior, Texto, CardMenor } from './styles';
 
 const PercentualEntrega = () => {
@@ -8,7 +8,7 @@ const PercentualEntrega = () => {
             <CardMaior>
                 <Texto>
                 <h3>Percentual de entrega por requisito</h3>
-                <p>Exibir parâmetros de horas</p>
+                <p><Checkbox></Checkbox>Exibir parâmetros de horas</p>
                 </Texto>
                
                 <CardMenor>

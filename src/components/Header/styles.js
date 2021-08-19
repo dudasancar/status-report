@@ -36,12 +36,3 @@ export const ImgNovo = styled.img`
     margin-left: 0.5rem;
     margin-bottom: 0.2rem;
 `;
-
-export const Linha1 = styled.div`
-    display: flex;
-    justify-content: flex-start;
-`;
-
-export const Linha2 = styled.div`
-    display: flex;
-`;

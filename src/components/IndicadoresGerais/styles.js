@@ -29,13 +29,13 @@ export const DivCard = styled.div`
 `;
 
 export const Card = styled.div`
-background: white;
-border: 2px solid #EFF2F0;
-border-radius: 1.5rem;
-width: 65rem;
-height: 12rem;
-display: flex;
-justify-content: space-around;
+    background: white;
+    border: 2px solid #EFF2F0;
+    border-radius: 1.5rem;
+    width: 65rem;
+    height: 12rem;
+    display: flex;
+    justify-content: space-around;
 `;
 
 export const Previstoh2 = styled.h2`
@@ -92,7 +92,7 @@ font-size: 0.8rem;
 export const Separador = styled(Divider)`
 width: 2rem;
 height: 4.5rem;
-margin-top: 1.5rem;
+margin-top: 4rem;
 `;
 
 export const BadgeStyle = styled.div`
