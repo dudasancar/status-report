@@ -12,7 +12,7 @@ export const Card = styled.div`
     border: 2px solid #EFF2F0;
     border-radius: 1.5rem;
     width: 65rem;
-    height: 35rem;
+    height: 32rem;
     padding: 1.2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -32,9 +32,28 @@ export const Filtrar = styled.p`
 
 export const Selects = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    div.ant-select-single:not(.ant-select-customize-input) .ant-select-selector  {
+        border-top-right-radius: 1.6rem;
+        border-bottom-right-radius: 1.6rem;
+        border: 2px solid #EFF2F0;
+        width: 20rem;
+        height: 3rem;
+        padding-top: 0.5rem;
+    }
 `;
 
-export const SelectStyle = styled(Select)`
-    width: 30rem;
+export const Selectp = styled.p`
+    background: #F6F7F6;
+    border-top-left-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
+    border: 2px solid #EFF2F0;
+    width: 11rem;
+    height: 3rem;
+    text-align: center;
+    padding-top: 0.7rem;
+    opacity: 0.5;
+    font-weight: bold;
 `;

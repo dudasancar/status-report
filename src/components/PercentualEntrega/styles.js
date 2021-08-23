@@ -35,3 +35,10 @@ export const CardMenor = styled.div`
     justify-content: center;
     padding: 2rem 1rem 1rem 1rem;
 `;
+
+export const Porcentagem = styled.div`
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    opacity: 0.5;
+`;

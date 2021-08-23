@@ -11,6 +11,6 @@ export const TabelaStyle = styled.div`
     border: 2px solid #EFF2F0;
     border-radius: 1.5rem;
     width: 60rem;
-    height: 23rem;
+    height: 20rem;
     padding: 0.75rem;
 `;

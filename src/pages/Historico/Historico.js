@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderHistorico from '../../components/HeaderHistorico/HeaderHistorico';
 import Tabela from '../../components/Tabela/Tabela';
 import { Select } from 'antd';
-import { DivHistorico, Card, Titulo, Filtrar, Selects, SelectStyle } from './styles';
+import { DivHistorico, Card, Titulo, Filtrar, Selects, SelectStyle, SelectP, Selectp } from './styles';
 
 const { Option } = Select;
 
@@ -16,12 +16,14 @@ const Historico = () => {
                     <Titulo>Histórico</Titulo>
                     <Filtrar>Filtrar histórico por</Filtrar>
                     <Selects>
-                        <SelectStyle placeholder="Nome do projeto">
+                        <Selectp>Nome projeto</Selectp>
+                        <Select style={{width: "25rem"}} placeholder="Nome do projeto">
                             <Option></Option>
-                        </SelectStyle>
-                        <SelectStyle placeholder="Semana">
+                        </Select>
+                        <Selectp>Semana</Selectp>
+                        <Select style={{width: "25rem"}} placeholder="Semana">
                             <Option></Option>
-                        </SelectStyle>
+                        </Select>
                     </Selects>
                     <Tabela />
                 </Card>

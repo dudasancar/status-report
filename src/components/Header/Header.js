@@ -1,12 +1,14 @@
 import React from 'react';
-import { Modal, InputNumber, DatePicker, Input, Form, Row, Col } from 'antd';
+import { Modal, InputNumber, DatePicker, Input, Form, Row, Col, Typography } from 'antd';
 import { Link, BrowserRouter } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import novo from '../../assets/novo.svg';
-import {Div, HistoricoButton, ImgLogo, NovoButton, ImgNovo } from './styles';
+import {Div, ImgLogo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnHistorico, BtnNovo } from './styles';
+
 
 
 const { TextArea } = Input;
+const { Title } = Typography;
 
 
 
@@ -27,19 +29,17 @@ const Header = () => {
   };
     return (
         <Div>
-            <HistoricoButton>
+            <BtnHistorico>
                 <BrowserRouter>
                     <Link to="/historico" >
                         Histórico
                     </Link>
                 </BrowserRouter>
-            </HistoricoButton>
+            </BtnHistorico>
             <ImgLogo src={logo} />
-            <NovoButton type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></NovoButton>
+            <BtnNovo type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></BtnNovo>
             <Modal 
-                style={{ fontFamily: 'Poppins' }} 
-                width="45rem" 
-                title="Novo status report" 
+                width="60rem"  
                 visible={isModalVisible} 
                 okText="Salvar" 
                 okButtonProps={{type: 'primary', shape: 'round'}} 
@@ -47,6 +47,7 @@ const Header = () => {
                 cancelText="Cancelar" 
                 cancelButtonProps={{type: 'text', danger: 'true'}} 
                 onCancel={handleCancel}>
+            <Title style={{fontSize: "1.2rem", paddingBottom: "1rem"}}>Novo status report</Title>
             <Form layout="vertical">
                 <Row>
                     <Col span={6}>
@@ -73,6 +74,10 @@ const Header = () => {
                         <TextArea rows={4} />
                     </Form.Item>
                 </Form>
+                <Buttons>
+                    <BtnCancelar type="text" onClick={handleCancel}>Cancelar</BtnCancelar>
+                    <BtnSalvar type="primary" onClick={handleOk}>Salvar</BtnSalvar>
+                </Buttons>
             </Modal>
         </Div>
     )
