@@ -1,11 +1,11 @@
 import React from 'react';
-import { Modal, InputNumber, DatePicker, Input, Form, Row, Col, Typography, Upload, message, Button } from 'antd';
+import { Modal, InputNumber, DatePicker, Input, Form, Row, Col, Typography, Upload, message } from 'antd';
 import { Link, BrowserRouter } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import novo from '../../assets/novo.svg';
-import {Div, ImgLogo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnHistorico, BtnNovo, BtnUpload } from './styles';
+import {Div, ImgLogo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnHistorico, BtnNovo, BtnUpload, Texto } from './styles';
 import locale from 'antd/es/date-picker/locale/pt_BR';
-import { UploadOutlined } from '@ant-design/icons';
+import upload from '../../assets/upload.svg';
 
 
 
@@ -50,22 +50,15 @@ const Header = () => {
     return (
         <Div>
             <BtnHistorico>
-                <BrowserRouter>
-                    <Link to="/historico" >
-                        Histórico
-                    </Link>
-                </BrowserRouter>
+                <Link to="/historico">
+                    Histórico
+                </Link>
             </BtnHistorico>
             <ImgLogo src={logo} />
             <BtnNovo type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></BtnNovo>
             <Modal 
                 width="60rem"  
                 visible={isModalVisible} 
-                okText="Salvar" 
-                okButtonProps={{type: 'primary', shape: 'round'}} 
-                onOk={handleOk} 
-                cancelText="Cancelar" 
-                cancelButtonProps={{type: 'text', danger: 'true'}} 
                 onCancel={handleCancel}>
             <Title style={{fontSize: "1.2rem", paddingBottom: "1rem"}}>Novo status report</Title>
             <Form layout="vertical">
@@ -90,12 +83,15 @@ const Header = () => {
                 
                     <Form.Item label="Json trello">
                         <Upload {...props}>
-                            <BtnUpload icon={<UploadOutlined />}><div>Selecione um arquivo TXT</div></BtnUpload>
+                            <BtnUpload>
+                                <Texto>Selecione um arquivo TXT</Texto>
+                                <div><img src={upload} /></div>
+                            </BtnUpload>
                         </Upload>
                     </Form.Item>
                 
                     <Form.Item label="Impedimentos e riscos da sprint">
-                        <TextArea rows={4} />
+                        <TextArea rows={4} style={{width: "55.5rem"}} />
                     </Form.Item>
                 </Form>
                 <Buttons>

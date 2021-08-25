@@ -6,7 +6,7 @@ import PoligonoVerde from '../../assets/PoligonoVerde.svg';
 import PoligonoVermelho from '../../assets/PoligonoVermelho.svg';
 
 const PercentualEntrega = () => {
-    const [aparecer, setAparecer] = React.useState(false);
+    const [aparecer, setAparecer] = React.useState(true);
 
 
         const Aparecer = () => {

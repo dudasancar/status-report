@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'antd';
 import { Card, TabelaStyle } from './styles';
 
-const dataSource = [
+const data = [
   {
     key: '1',
     nome: 'Nefrostar',
@@ -38,6 +38,7 @@ const columns = [
     title: 'Nome do projeto',
     dataIndex: 'nome',
     key: 'nome',
+    render: text => <a href="/:id">{text}</a>,
   },
   {
     title: 'Semana',
@@ -61,7 +62,7 @@ const Tabela = () => {
     return (
         <Card>
         <TabelaStyle>
-            <Table dataSource={dataSource} columns={columns} />
+            <Table dataSource={data} columns={columns} pagination={false} />
         </TabelaStyle>
         </Card>
     )

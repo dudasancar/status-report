@@ -2,7 +2,8 @@ import React from 'react';
 import HeaderHistorico from '../../components/HeaderHistorico/HeaderHistorico';
 import Tabela from '../../components/Tabela/Tabela';
 import { Select } from 'antd';
-import { DivHistorico, Card, Titulo, Filtrar, Selects, SelectStyle, SelectP, Selectp } from './styles';
+import { DivHistorico, Card, Titulo, Filtrar, Selects, Selectp } from './styles';
+import seta from '../../assets/seta.svg';
 
 const { Option } = Select;
 

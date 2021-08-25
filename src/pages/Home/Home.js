@@ -13,7 +13,7 @@ import { DivHome, Titulo, Nefrostar, Separador, Semana } from './styles';
 const Home = () => {
     return (
         <>
-            <Header />
+        <Header />
             <DivHome>
                 <Titulo>
                     <Nefrostar>Nefrostar</Nefrostar>

@@ -31,14 +31,14 @@ const GlobalStyle = createGlobalStyle`
     div.ant-modal-footer {
         display: none;
     }
-    ul.ant-pagination {
-        display: none;
-    }
     button.ant-switch {
         right: 5px;
     }
     button.ant-switch-checked {
         background-color: #00BE7B;
+    }
+    a {
+        color: black;
     }
 `;
 

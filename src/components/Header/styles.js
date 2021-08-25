@@ -12,7 +12,7 @@ export const BtnHistorico = styled(Button)`
     color: #00FFA5;
     border: 2px solid #00FFA5;
     border-radius: 3rem;
-    background: black 0% 0% no-repeat padding-box;
+    background: black 0% 0% no-repeat;
     width: 8rem;
     height: 2rem;
     margin-top: 0.65rem;
@@ -55,5 +55,13 @@ export const BtnSalvar = styled(Button)`
 
 export const BtnUpload = styled(Button)`
     border-radius: 0.6rem;
+    width: 55.5rem;
     height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const Texto = styled.div`
+    opacity: 0.5;
 `;

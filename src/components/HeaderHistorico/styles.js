@@ -12,7 +12,7 @@ export const BtnVoltar = styled(Button)`
     color: black;
     border: 2px solid #00FFA5;
     border-radius: 3rem;
-    background: #00FFA5 0% 0% no-repeat padding-box;
+    background: #00FFA5 0% 0% no-repeat;
     width: 8rem;
     height: 2rem;
     margin-top: 0.65rem;
@@ -56,4 +56,17 @@ export const BtnSalvar = styled(Button)`
     width: 8rem;
     border-radius: 6rem;
     border: #00BE7B;
+`;
+
+export const BtnUpload = styled(Button)`
+    border-radius: 0.6rem;
+    width: 55.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const Texto = styled.div`
+    opacity: 0.5;
 `;

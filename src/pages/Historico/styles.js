@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Select } from 'antd';
 
 export const DivHistorico = styled.div`
     background: #F6F7F6;
@@ -12,7 +11,7 @@ export const Card = styled.div`
     border: 2px solid #EFF2F0;
     border-radius: 1.5rem;
     width: 65rem;
-    height: 32rem;
+    height: 35rem;
     padding: 1.2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
