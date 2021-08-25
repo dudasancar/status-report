@@ -5,10 +5,12 @@ import voltar from '../../assets/voltar.svg';
 import logo from '../../assets/logo.svg';
 import novo from '../../assets/novo.svg';
 import {Div, ImgVoltar, ImgLogo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnNovo, BtnVoltar } from './styles';
+import locale from 'antd/es/date-picker/locale/pt_BR';
 
 
 const { TextArea } = Input;
 const { Title } = Typography;
+const dateFormat = 'DD/MM/YYYY';
 
 const HeaderHistorico = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
@@ -53,12 +55,12 @@ const HeaderHistorico = () => {
                         </Col>
                         <Col span={9}>
                         <Form.Item label="Prazo total">
-                                <DatePicker.RangePicker style={{ width: '95%' }} />
+                                <DatePicker.RangePicker format={dateFormat} locale={locale} />
                             </Form.Item>
                         </Col>
                     <Col span={9}>
                         <Form.Item label="Prazo da sprint">
-                            <DatePicker.RangePicker style={{ width: '95%' }} />
+                            <DatePicker.RangePicker format={dateFormat} locale={locale} />
                         </Form.Item>
                     </Col>
                 </Row>

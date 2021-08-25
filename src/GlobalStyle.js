@@ -34,6 +34,12 @@ const GlobalStyle = createGlobalStyle`
     ul.ant-pagination {
         display: none;
     }
+    button.ant-switch {
+        right: 5px;
+    }
+    button.ant-switch-checked {
+        background-color: #00BE7B;
+    }
 `;
 
 export default GlobalStyle;

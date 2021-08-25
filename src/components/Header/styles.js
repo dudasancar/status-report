@@ -52,3 +52,8 @@ export const BtnSalvar = styled(Button)`
     border-radius: 6rem;
     border: #00BE7B;
 `;
+
+export const BtnUpload = styled(Button)`
+    border-radius: 0.6rem;
+    height: 2.5rem;
+`;
