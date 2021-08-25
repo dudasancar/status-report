@@ -9,9 +9,9 @@ const PercentualEntrega = () => {
     const [aparecer, setAparecer] = React.useState(true);
 
 
-        const Aparecer = () => {
-            aparecer ? setAparecer(false) : setAparecer(true);
-        }
+    const Aparecer = () => {
+        aparecer ? setAparecer(false) : setAparecer(true);
+    }
 
     return (
         <Total>

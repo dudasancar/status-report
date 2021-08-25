@@ -28,7 +28,7 @@ const props = {
         message.error(`${info.file.name} file upload failed.`);
       }
     },
-  };
+};
 
 const HeaderHistorico = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);

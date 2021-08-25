@@ -6,12 +6,12 @@ import { Titulo, Cards, Card1, Estimativah2, Estimativa, Card2, ImgAjuda, Estima
 const IndicadoresPerformance = () => {
     return (
         <>
-        <DivTitulo>
-            <DivTitulo2>
-                <Titulo>Indicadores de performance da sprint</Titulo>
-            </DivTitulo2>
-        </DivTitulo>
-        <Cards>
+            <DivTitulo>
+                <DivTitulo2>
+                    <Titulo>Indicadores de performance da sprint</Titulo>
+                </DivTitulo2>
+            </DivTitulo>
+            <Cards>
                 <Card1>
                     <Estimativah2>65hr</Estimativah2>
                     <Estimativa>Estimativa da sprint</Estimativa>
@@ -25,7 +25,7 @@ const IndicadoresPerformance = () => {
                     <HorasConsumidash2>33hr</HorasConsumidash2>
                     <HorasConsumidas>Total de horas consumidas</HorasConsumidas>
                 </Card3>
-        </Cards>
+            </Cards>
         </>
     )
 }

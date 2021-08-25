@@ -26,11 +26,11 @@ const IndicadoresGerais = () => {
                         <Performanceh2>0,90</Performanceh2>
                         <Performance>Performance</Performance>
                     </div>
-                <BadgeStyle>
-                    <Badge status="success" text=">= 0.95" />
-                    <Badge status="warning" text=">= 0.85" />
-                    <Badge status="error" text="< 0.85" />
-                </BadgeStyle>  
+                    <BadgeStyle>
+                        <Badge status="success" text=">= 0.95" />
+                        <Badge status="warning" text=">= 0.85" />
+                        <Badge status="error" text="< 0.85" />
+                    </BadgeStyle>  
 
                 </Card>
             </DivCard>

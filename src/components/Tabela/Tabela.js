@@ -59,13 +59,13 @@ const columns = [
 
 
 const Tabela = () => {
-    return (
-        <Card>
-        <TabelaStyle>
-            <Table dataSource={data} columns={columns} pagination={false} />
-        </TabelaStyle>
-        </Card>
-    )
+  return (
+    <Card>
+      <TabelaStyle>
+        <Table dataSource={data} columns={columns} pagination={false} />
+      </TabelaStyle>
+    </Card>
+  )
 }
 
 export default Tabela;

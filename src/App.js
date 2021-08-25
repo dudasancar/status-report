@@ -6,6 +6,7 @@ import { Footer } from 'antd/lib/layout/layout';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Historico from './pages/Historico/Historico';
 import GlobalStyle from './GlobalStyle';
+import Projeto from './pages/Projeto/Projeto';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/historico" component={Historico} />
-          <Route path="/:id" component={Home}/>
+          <Route path="/:id" component={Projeto}/>
         </Switch>
       </BrowserRouter>
       <Footer />
