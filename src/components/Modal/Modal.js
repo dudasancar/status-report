@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BtnNovo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnUpload, Texto } from '../Modal/styles';
 import locale from 'antd/es/date-picker/locale/pt_BR';
 import upload from '../../assets/upload.svg';
@@ -47,27 +47,48 @@ const ModalHeader = () => {
 
     React.useEffect(() => {
         api
-        .post('/report',{
-            "week": "3",
-            "dateStart": "2021-07-09T14:48:00.000Z", 
-            "dateEnd": "2021-08-06T14:48:00.000Z",
-            "dateSprintStart": "2021-07-26T14:48:00.000Z",
-            "dateSprintEnd": "2011-07-30T14:48:00.000Z",
-            "boardData": "", // arquivo json do board do trello em base64
-            "comments": "Impeditivos e riscos vão aqui"
-        })
+        .post('/report',
+        {
+            "week": week,
+            "dateStart": date[0], 
+            "dateEnd": date[1],
+            "dateSprintStart": dateSprint[0],
+            "dateSprintEnd": dateSprint[1],
+            "boardData": boardData, // arquivo json do board do trello em base64
+            "comments": comments
+        }
+        )
         .then((response) => setNovoStatusReport(response.data))
         .catch((err) => {
             console.error("ops! ocorreu um erro" + err);
         });
     }, []);
 
-    const [inputNumber, setInputNumber] = React.useState('');
-
-    function handleChange() {
-        console.log(setInputNumber());
-    }
+    const [ week, setWeek ] = useState('');
+    const [ date, setDate ] = useState('');
+    const [ dateSprint, setDateSprint ] = useState('');
+    const [ boardData, setBoardData ] = useState('');
+    const [ comments, setComments ] = useState('');
     
+    function handleChangeWeek(value) {
+       setWeek(value);
+    }
+
+    function handleChangeDate(value) {
+        setDate(value);
+    }
+
+    function handleChangeSprint(value) {
+        setDateSprint(value);
+    }
+
+    function handleBoard(value) {
+        setBoardData(value);
+    }
+
+    function handleComments(e) {
+        setComments(e.target.value);
+    }
     return (
         <div>
             <BtnNovo type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></BtnNovo>
@@ -80,25 +101,25 @@ const ModalHeader = () => {
                 <Row>
                     <Col span={6}>
                         <Form.Item label="Número da semana">
-                            <InputNumber min={1} max={10} style={{ width: '95%' }} value={inputNumber} onChange={handleChange}
+                            <InputNumber min={1} max={10} style={{ width: '95%' }} value={week} onChange={handleChangeWeek}
                             />
                         </Form.Item>
                     </Col>
                     <Col span={9}>
                     <Form.Item label="Prazo total">
-                            <DatePicker.RangePicker format={dateFormat} locale={locale} />
+                            <DatePicker.RangePicker format={dateFormat} locale={locale} value={date} onChange={handleChangeDate} />
                         </Form.Item>
                     </Col>
                     <Col span={9}>
                         <Form.Item label="Prazo da sprint">
-                            <DatePicker.RangePicker format={dateFormat} locale={locale} />
+                            <DatePicker.RangePicker format={dateFormat} locale={locale} value={dateSprint} onChange={handleChangeSprint} />
                         </Form.Item>
                     </Col>
                 </Row>
                 
                     <Form.Item label="Json trello">
                         <Upload {...props}>
-                            <BtnUpload>
+                            <BtnUpload value={boardData} onChange={handleBoard}>
                                 <Texto>Selecione um arquivo TXT</Texto>
                                 <div><img src={upload} /></div>
                             </BtnUpload>
@@ -106,7 +127,7 @@ const ModalHeader = () => {
                     </Form.Item>
                 
                     <Form.Item label="Impedimentos e riscos da sprint">
-                        <TextArea rows={4} style={{width: "55.5rem"}} />
+                        <TextArea rows={4} style={{width: "55.5rem"}} value={comments} onChange={handleComments} />
                     </Form.Item>
                 </Form>
                 <Buttons>
