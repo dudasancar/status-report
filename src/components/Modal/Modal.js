@@ -3,8 +3,8 @@ import { BtnNovo, ImgNovo, Buttons, BtnCancelar, BtnSalvar, BtnUpload, Texto } f
 import locale from 'antd/es/date-picker/locale/pt_BR';
 import upload from '../../assets/upload.svg';
 import { Modal, InputNumber, DatePicker, Input, Form, Row, Col, Typography, Upload, message } from 'antd';
-import api from '../../services/api';
 import novo from '../../assets/novo.svg';
+import { registerStatusReport } from '../../services/ListStatusReport';
 
 
 const { TextArea } = Input;
@@ -30,6 +30,7 @@ const props = {
 
 const ModalHeader = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
+    const [form] = Form.useForm();
 
     const showModal = () => {
     setIsModalVisible(true);
@@ -42,27 +43,6 @@ const ModalHeader = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-
-  const [novoStatusReport, setNovoStatusReport] = React.useState();
-
-    React.useEffect(() => {
-        api
-        .post('/report',
-        {
-            "week": week,
-            "dateStart": date[0], 
-            "dateEnd": date[1],
-            "dateSprintStart": dateSprint[0],
-            "dateSprintEnd": dateSprint[1],
-            "boardData": boardData, // arquivo json do board do trello em base64
-            "comments": comments
-        }
-        )
-        .then((response) => setNovoStatusReport(response.data))
-        .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-        });
-    }, []);
 
     const [ week, setWeek ] = useState('');
     const [ date, setDate ] = useState('');
@@ -89,30 +69,63 @@ const ModalHeader = () => {
     function handleComments(e) {
         setComments(e.target.value);
     }
+
+    const onFinish = (event) => {
+        event.preventDefault();
+        registerStatusReport({week, date, dateSprint, boardData, comments})
+        .then(function(response) {
+            console.log(response)
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+      };
     return (
         <div>
-            <BtnNovo type="primary" onClick={showModal}>Novo Status Report<ImgNovo src={novo} /></BtnNovo>
+            <BtnNovo 
+                type="primary" 
+                onClick={showModal}>
+                    Novo Status Report
+                <ImgNovo src={novo} alt="novo" />
+            </BtnNovo>
+
             <Modal 
                 width="60rem"  
                 visible={isModalVisible} 
                 onCancel={handleCancel}>
             <Title style={{fontSize: "1.2rem", paddingBottom: "1rem"}}>Novo status report</Title>
-            <Form layout="vertical">
+            <form 
+            layout="vertical" 
+            onSubmit={onFinish}>
                 <Row>
                     <Col span={6}>
                         <Form.Item label="Número da semana">
-                            <InputNumber min={1} max={10} style={{ width: '95%' }} value={week} onChange={handleChangeWeek}
+                            <InputNumber 
+                                min={1} max={10} 
+                                style={{ width: '95%' }} 
+                                value={week}
+                                onChange={handleChangeWeek}
                             />
                         </Form.Item>
                     </Col>
                     <Col span={9}>
                     <Form.Item label="Prazo total">
-                            <DatePicker.RangePicker format={dateFormat} locale={locale} value={date} onChange={handleChangeDate} />
+                            <DatePicker.RangePicker 
+                                format={dateFormat} 
+                                locale={locale} 
+                                value={date}
+                                onChange={handleChangeDate}
+                            />
                         </Form.Item>
                     </Col>
                     <Col span={9}>
                         <Form.Item label="Prazo da sprint">
-                            <DatePicker.RangePicker format={dateFormat} locale={locale} value={dateSprint} onChange={handleChangeSprint} />
+                            <DatePicker.RangePicker 
+                                format={dateFormat} 
+                                locale={locale} 
+                                value={dateSprint}
+                                onChange={handleChangeSprint}
+                             />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -127,13 +140,18 @@ const ModalHeader = () => {
                     </Form.Item>
                 
                     <Form.Item label="Impedimentos e riscos da sprint">
-                        <TextArea rows={4} style={{width: "55.5rem"}} value={comments} onChange={handleComments} />
+                        <TextArea 
+                            rows={4} 
+                            style={{width: "55.5rem"}}  
+                            value={comments}
+                            onChange={handleComments}
+                        />
                     </Form.Item>
-                </Form>
                 <Buttons>
                     <BtnCancelar type="text" onClick={handleCancel}>Cancelar</BtnCancelar>
-                    <BtnSalvar type="primary" onClick={handleOk}>Salvar</BtnSalvar>
+                    <BtnSalvar type="primary" htmlType="submit">Salvar</BtnSalvar>
                 </Buttons>
+                </form>
             </Modal>
         </div>
     )

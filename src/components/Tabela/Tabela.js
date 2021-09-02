@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Table } from 'antd';
 import { Card, TabelaStyle } from './styles';
+
+
+const Tabela = (props) => {
+
 
 const data = [
   {
@@ -36,8 +40,8 @@ const data = [
 const columns = [
   {
     title: 'Nome do projeto',
-    dataIndex: 'nome',
-    key: 'nome',
+    dataIndex: `${props.listStatusReport && props.listStatusReport.project}`,
+    key: `${props.listStatusReport && props.listStatusReport.project}`,
     render: text => <a href="/:id">{text}</a>,
   },
   {
@@ -57,8 +61,6 @@ const columns = [
   },
 ];
 
-
-const Tabela = () => {
   return (
     <Card>
       <TabelaStyle>
