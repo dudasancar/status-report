@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import HeaderHistorico from '../../components/HeaderHistorico/HeaderHistorico';
 import Tabela from '../../components/Tabela/Tabela';
 import { Select } from 'antd';
@@ -14,12 +14,13 @@ const Historico = () => {
           getListStatusReport()
           .then((response) => {
             setListStatusReport(response)
+            console.log(response)
           })
           .catch((error) => {
             console.log(error)
         })
-      }, [])
-      console.log(listStatusReport)
+    }, [])
+    console.log(listStatusReport)
     return (
         <>
             <HeaderHistorico />

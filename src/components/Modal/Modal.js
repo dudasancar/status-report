@@ -6,13 +6,26 @@ import { Modal, InputNumber, DatePicker, Input, Form, Row, Col, Typography, Uplo
 import novo from '../../assets/novo.svg';
 import { registerStatusReport } from '../../services/ListStatusReport';
 
+const ModalHeader = () => {
+    const { TextArea } = Input;
+    const { Title } = Typography;
+    const dateFormat = 'DD/MM/YYYY';
+    const [form] = Form.useForm();
+    const [ week, setWeek ] = useState('');
+    const [ date, setDate ] = useState('');
+    const [ dateSprint, setDateSprint ] = useState('');
+    const [ boardData, setBoardData ] = useState('');
+    const [ comments, setComments ] = useState('');
 
-const { TextArea } = Input;
-const { Title } = Typography;
-const dateFormat = 'DD/MM/YYYY';
-const props = {
-    name: 'file',
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    const dummyRequest = ({ file, onSuccess }) => {
+        setTimeout(() => {
+          onSuccess('ok');
+        }, 0);
+      };
+   
+    const props = {
+    name: 'file.txt',
+    customRequest: dummyRequest,
     headers: {
       authorization: 'authorization-text',
     },
@@ -21,16 +34,20 @@ const props = {
         console.log(info.file, info.fileList);
       }
       if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
+        let reader = new FileReader();
+        reader.onloadend = () => {
+            const result = reader?.result?.toString().split(',');
+            setBoardData({ boardData: result[1] })
+        };
+        reader.readAsDataURL(info?.file.originFileObj);
+        message.success(`${info.file.name} Arquivo carregado com sucesso!`);
       } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
+        setBoardData(false);
+        message.error(`${info.file.name} Upload do arquivo falhou.`);
       }
     },
 };
-
-const ModalHeader = () => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
-    const [form] = Form.useForm();
 
     const showModal = () => {
     setIsModalVisible(true);
@@ -43,12 +60,6 @@ const ModalHeader = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-
-    const [ week, setWeek ] = useState('');
-    const [ date, setDate ] = useState('');
-    const [ dateSprint, setDateSprint ] = useState('');
-    const [ boardData, setBoardData ] = useState('');
-    const [ comments, setComments ] = useState('');
     
     function handleChangeWeek(value) {
        setWeek(value);

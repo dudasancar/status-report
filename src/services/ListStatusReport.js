@@ -2,7 +2,7 @@ import api from "./api";
 
 export const getListStatusReport = async() => {
     try {
-        const response = await api.get('/report')
+        const response = await api.get('/report');
         return response.data;
     } catch (error) {
         return Promise.reject(error.response)
@@ -18,7 +18,7 @@ export const registerStatusReport = async(form) => {
         dateEnd: form?.date[1],
         dateSprintStart: form?.dateSprint[0],
         dateSprintEnd: form?.dateSprint[1],
-        boardData: form?.boardData, // arquivo json do board do trello em base64
+        boardData: form.boardData, // arquivo json do board do trello em base64
         comments: form?.comments
     }
     try {
