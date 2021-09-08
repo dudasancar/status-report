@@ -20,7 +20,7 @@ const Historico = () => {
             console.log(error)
         })
     }, [])
-    console.log(listStatusReport)
+
     return (
         <>
             <HeaderHistorico />

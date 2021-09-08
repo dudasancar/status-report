@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge } from 'antd';
 import { Titulo, DivCard, Card, Previstoh2, Previsto, Separador, Realizadoh2, Realizado, Performanceh2, Performance, BadgeStyle, DivTitulo, DivTitulo2 } from './styles';
 
-const IndicadoresGerais = () => {   
+const IndicadoresGerais = (props) => {   
     return (
         <>
             <DivTitulo>
@@ -13,17 +13,17 @@ const IndicadoresGerais = () => {
             <DivCard>
                 <Card>
                     <div>
-                        <Previstoh2>40%</Previstoh2>
+                        <Previstoh2>{props.projectStatusReport?.predictedPercentage}%</Previstoh2>
                         <Previsto>Previsto</Previsto>
                     </div>
                     <Separador type="vertical" />
                     <div>
-                        <Realizadoh2>33.84%</Realizadoh2>
+                        <Realizadoh2>{props.projectStatusReport?.accomplishedPercentage}%</Realizadoh2>
                         <Realizado>Realizado</Realizado>
                     </div>
                     <Separador type="vertical" />
                     <div>
-                        <Performanceh2>0,90</Performanceh2>
+                        <Performanceh2>{props.projectStatusReport?.performancePercentage}</Performanceh2>
                         <Performance>Performance</Performance>
                     </div>
                     <BadgeStyle>

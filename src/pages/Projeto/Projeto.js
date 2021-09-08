@@ -1,5 +1,5 @@
-import React from 'react'
-import HeaderProjeto from '../../components/HeaderProjeto/HeaderProjeto';
+import React, {useEffect, useState} from 'react'
+import Header from '../../components/Header/Header';
 import Datas from '../../components/Datas/Datas';
 import IndicadoresGerais from '../../components/IndicadoresGerais/IndicadoresGerais';
 import IndicadoresPerformance from '../../components/IndicadoresPerformance/IndicadoresPerformance';
@@ -7,23 +7,37 @@ import PercentualEntrega from '../../components/PercentualEntrega/PercentualEntr
 import Impeditivos from '../../components/Impeditivos/Impeditivos';
 import Footer from '../../components/Footer/Footer';
 import { DivHome, Titulo, Nefrostar, Separador, Semana, Historico } from './styles';
+import { getProjectStatusReport } from '../../services/ListStatusReport';
 
 
-const Projeto = () => {
+const Projeto = (props) => {
+    const [projectStatusReport, setProjectStatusReport] = useState();
+    const id = props.match.params.id;
+      useEffect(() => {
+          getProjectStatusReport(id)
+          .then((response) => {
+            setProjectStatusReport(response)
+            console.log(response)
+          })
+          .catch((error) => {
+            console.log(error)
+        })
+    }, [])
+
     return (
         <>
-            <HeaderProjeto />
+            <Header />
             <DivHome>
                 <Historico>Histórico</Historico>
                 <Titulo>
-                    <Semana>2º Semana</Semana>
+                    <Semana>{projectStatusReport?.week}º Semana</Semana>
                     <Separador>/</Separador>
-                    <Nefrostar>Nefrostar</Nefrostar>
+                    <Nefrostar>{projectStatusReport?.project}</Nefrostar>
                 </Titulo>
-                <Datas />
-                <IndicadoresGerais />
-                <IndicadoresPerformance />
-                <PercentualEntrega />
+                <Datas projectStatusReport={projectStatusReport} />
+                <IndicadoresGerais projectStatusReport={projectStatusReport} />
+                <IndicadoresPerformance projectStatusReport={projectStatusReport} />
+                <PercentualEntrega  />
                 <Impeditivos />
                 <Footer />
             </DivHome>

@@ -3,6 +3,7 @@ import api from "./api";
 export const getListStatusReport = async() => {
     try {
         const response = await api.get('/report');
+        console.log(response.data)
         return response.data;
     } catch (error) {
         return Promise.reject(error.response)
@@ -29,6 +30,14 @@ export const registerStatusReport = async(form) => {
     }
 }
 
-
+export const getProjectStatusReport = async(id) => {
+    try {
+        const response = await api.get(`/report/${id}`);
+        console.log(response.data)
+        return response.data;
+    } catch (error) {
+        return Promise.reject(error.response)
+    }
+}
 
 

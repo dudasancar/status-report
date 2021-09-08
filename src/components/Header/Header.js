@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Div>
             <BtnHistorico>
-                <Link to="/historico">
+                <Link to="/">
                     Histórico
                 </Link>
             </BtnHistorico>
