@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import HeaderHistorico from '../../components/HeaderHistorico/HeaderHistorico';
+import HeaderHistorico from '../../components/Header/Header';
 import Tabela from '../../components/Tabela/Tabela';
 import { Select } from 'antd';
 import { DivHistorico, Card, Titulo, Filtrar, Selects, Selectp } from './styles';
@@ -30,11 +30,11 @@ const Historico = () => {
                     <Filtrar>Filtrar histórico por</Filtrar>
                     <Selects>
                         <Selectp>Nome projeto</Selectp>
-                        <Select style={{width: "25rem"}} placeholder="Nome do projeto">
+                        <Select style={{width: "25rem"}} placeholder="Selecione">
                             <Option></Option>
                         </Select>
                         <Selectp>Semana</Selectp>
-                        <Select style={{width: "25rem"}} placeholder="Semana">
+                        <Select style={{width: "25rem"}} placeholder="Selecione">
                             <Option></Option>
                         </Select>
                     </Selects>

@@ -53,10 +53,6 @@ const ModalHeader = () => {
     setIsModalVisible(true);
   };
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
   const handleCancel = () => {
     setIsModalVisible(false);
   };
@@ -145,7 +141,7 @@ const ModalHeader = () => {
                         <Upload {...props}>
                             <BtnUpload value={boardData} onChange={handleBoard}>
                                 <Texto>Selecione um arquivo TXT</Texto>
-                                <div><img src={upload} /></div>
+                                <div><img src={upload} alt="upload" /></div>
                             </BtnUpload>
                         </Upload>
                     </Form.Item>

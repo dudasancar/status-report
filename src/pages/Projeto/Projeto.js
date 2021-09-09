@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Header from '../../components/Header/Header';
+import Header from '../../components/HeaderHistorico/HeaderHistorico';
 import Datas from '../../components/Datas/Datas';
 import IndicadoresGerais from '../../components/IndicadoresGerais/IndicadoresGerais';
 import IndicadoresPerformance from '../../components/IndicadoresPerformance/IndicadoresPerformance';
@@ -22,7 +22,7 @@ const Projeto = (props) => {
           .catch((error) => {
             console.log(error)
         })
-    }, [])
+    }, [id])
 
     return (
         <>
@@ -37,7 +37,7 @@ const Projeto = (props) => {
                 <Datas projectStatusReport={projectStatusReport} />
                 <IndicadoresGerais projectStatusReport={projectStatusReport} />
                 <IndicadoresPerformance projectStatusReport={projectStatusReport} />
-                <PercentualEntrega  />
+                <PercentualEntrega projectStatusReport={projectStatusReport} />
                 <Impeditivos />
                 <Footer />
             </DivHome>

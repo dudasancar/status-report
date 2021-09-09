@@ -21,4 +21,3 @@ export const BtnHistorico = styled(Button)`
 export const ImgLogo = styled.img`
     width: 8rem;
 `;
-
