@@ -51,7 +51,7 @@ export const Dados = styled.p`
     font-size: 12px;
     position: relative;
     margin: 0;
-    bottom: 21px;
+    bottom: 30px;
     left: 25px;
     display: flex;
     justify-content: flex-start;
@@ -61,7 +61,7 @@ export const Dados = styled.p`
 export const Horas = styled.p`
     font-size: 12px;
     position: relative;
-    bottom: 21px;
+    bottom: 30px;
     right: 50px;
     margin: 0;
 `;

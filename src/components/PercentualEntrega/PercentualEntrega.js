@@ -55,17 +55,17 @@ const PercentualEntrega = (props) => {
           {props?.projectStatusReport?.epics.map((epic) => 
           <>
           <Progress
-            percent={77}
+            percent={epic.percentageDelivered}
             showInfo={false}
             trailColor="#F6F7F6"
             strokeColor="#0A56A2"
             strokeWidth={25}
           />
-            <Dados>{epic.name}</Dados>
+            <Dados>{epic.name} ({epic.percentageDelivered}%)</Dados>
           {aparecer && (
             <Horas>
-              M28h / m32h <img src={PoligonoVermelho} alt="poligono vermelho" />{" "}
-              / R56h <img src={PoligonoVermelho} alt="poligono vermelho" />
+              M{epic.estimate}h / m{epic.cardsTotalEstimate}h <img src={epic.cardsTotalEstimate > epic.estimate ? PoligonoVermelho : PoligonoVerde} alt="poligono vermelho" />{" "}
+              / R{epic.spentTime}h <img src={epic.spentTime > epic.estimate ? PoligonoVermelho : PoligonoVerde} alt="poligono vermelho" />
             </Horas>
           )}
           </>
